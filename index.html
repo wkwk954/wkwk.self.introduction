@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>王凯 | WANG KAI - 个人主页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+SC:wght@300;500;900&display=swap');
+        
+        :root {
+            --primary: #000000;
+            --secondary: #fbfbfb;
+            --accent: #ff5722;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: var(--secondary);
+            color: var(--primary);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .text-huge {
+            font-size: clamp(3.5rem, 15vw, 10rem);
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+        }
+
+        .hollow-num {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.5); /* 提高白色状态下的可见度 */
+            color: transparent;
+            line-height: 1;
+            display: inline-block; /* 确保宽度计算正确 */
+        }
+
+        .hollow-num-dark {
+            -webkit-text-stroke: 1px rgba(0,0,0,0.2) !important;
+        }
+
+        .preview-frame {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%) scale(0.8) rotate(5deg);
+            width: 280px;
+            height: 160px;
+            border-radius: 1rem;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 20;
+            background-color: #bae6fd; /* 整个画框底色改为浅蓝色 */
+            box-shadow: 0 20px 40px -10px rgba(186, 230, 253, 0.5); /* 浅蓝色投影 */
+            border: 4px solid #bae6fd; /* 浅蓝色边框 */
+        }
+
+        .preview-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: multiply; /* 让图片与蓝色底色产生融合感 */
+            opacity: 0.9;
+        }
+
+        .group:hover .preview-frame {
+            opacity: 1;
+            transform: translateY(-50%) scale(1) rotate(-2deg);
+        }
+
+        /* 移动端隐藏预览框以防遮挡文字 */
+        @media (max-width: 768px) {
+            .preview-frame { display: none; }
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="selection:bg-black selection:text-white">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-black/5">
+        <div class="max-w-screen-xl mx-auto px-5 h-16 md:h-20 flex items-center justify-between">
+            <span class="font-black text-lg md:text-xl tracking-tighter uppercase italic flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                WK / 2025
+            </span>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-xs font-bold tracking-widest uppercase hover:opacity-50">关于</a>
+                <a href="#works" class="text-xs font-bold tracking-widest uppercase hover:opacity-50">作品</a>
+                <a href="#experience" class="text-xs font-bold tracking-widest uppercase hover:opacity-50">经历</a>
+                <a href="#contact" class="text-xs font-bold tracking-widest uppercase hover:opacity-50">联系</a>
+                <a href="#thanks" class="text-xs font-bold tracking-widest uppercase hover:opacity-50">鸣谢</a>
+            </div>
+
+            <div class="flex md:hidden overflow-x-auto no-scrollbar space-x-6 whitespace-nowrap ml-4">
+                <a href="#about" class="text-[11px] font-black uppercase">关于</a>
+                <a href="#works" class="text-[11px] font-black uppercase">作品</a>
+                <a href="#experience" class="text-[11px] font-black uppercase">经历</a>
+                <a href="#contact" class="text-[11px] font-black uppercase">联系</a>
+                <a href="#thanks" class="text-[11px] font-black uppercase">鸣谢</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-screen-xl mx-auto px-5 overflow-x-hidden">
+        
+        <section id="about" class="pt-32 pb-16 md:pt-48 md:pb-24 border-b border-black/10">
+            <div class="flex items-center space-x-2 mb-6 md:mb-8">
+                <span class="w-2 h-2 bg-black rounded-full animate-pulse"></span>
+                <p class="text-[10px] md:text-xs font-mono text-black/40 tracking-[0.2em] uppercase flex items-center gap-2">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Status: Active Exploration
+                </p>
+            </div>
+            
+            <p class="text-[10px] font-mono mb-4 text-black/40 tracking-[0.3em]">/ INTRODUCTION</p>
+            <h1 class="text-huge font-black mb-12 md:mb-16">王凯</h1>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
+                <div class="lg:col-span-8 space-y-8 md:space-y-10">
+                    <p class="text-2xl md:text-5xl font-light leading-tight">
+                        <span class="font-black">嘉兴职业技术学院</span> 大一新生。<br class="hidden md:block">
+                        一名正在进化的 <span class="bg-black text-white px-3 py-1 italic transform -rotate-1 inline-block">AI学习者</span> 与校园创业者。<br class="hidden md:block">
+                        致力于在传统路径之外，探索属于新时代的可能性。
+                    </p>
+                    <div class="flex items-center space-x-4 md:space-x-6">
+                        <div class="w-8 md:w-12 h-[1px] bg-black/30"></div>
+                        <p class="text-lg md:text-xl font-medium italic opacity-60">“精诚所至 金石为开”</p>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-4">
+                    <div class="industrial-border p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] bg-white flex flex-col justify-between h-full min-h-[160px]">
+                        <p class="text-[10px] font-mono text-black/30 uppercase tracking-widest mb-4">Focus Area</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-pill">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                AIGC
+                            </span>
+                            <span class="tag-pill">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                STARTUP
+                            </span>
+                            <span class="tag-pill">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                TECH ADDICT
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="py-20 border-b border-black/10">
+            <div class="mb-12 md:mb-16">
+                <p class="text-sm font-mono mb-4 text-black/40 tracking-[0.3em] uppercase">/ Section 01.5</p>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tighter uppercase">作品展示</h2>
+            </div>
+
+            <div class="w-full py-24 border-2 border-dashed border-black/5 rounded-[2rem] flex flex-col items-center justify-center group hover:border-black/10 transition-colors">
+                <div class="w-12 h-12 mb-6 text-black/10 group-hover:text-black/20 transition-colors">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <p class="text-[10px] font-mono text-black/20 uppercase tracking-[0.4em]">Works are being organized / 内容整理中</p>
+            </div>
+        </section>
+
+        <section id="experience" class="py-20 border-b border-black/10">
+            <div class="mb-12 md:mb-16">
+                <p class="text-sm font-mono mb-4 text-black/40 tracking-[0.3em] uppercase">/ Section 02</p>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tighter uppercase">成长路径</h2>
+            </div>
+            
+            <div class="space-y-12">
+                <!-- AI 探索者 -->
+                <div class="flex flex-col gap-4">
+                    <div class="p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-zinc-900 text-white relative overflow-hidden">
+                        <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mb-6 md:mb-8">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h4 class="text-3xl md:text-4xl font-black mb-4 uppercase italic">AI 探索者</h4>
+                        <p class="text-white/50 text-xs md:text-sm leading-relaxed font-light max-w-xl">专注于大模型应用、Prompt Engineering及个人生产力工具的智能化改造。</p>
+                    </div>
+
+                    <div class="space-y-3 px-1 md:px-2">
+                        <!-- AI Project 01 -->
+                        <div class="bg-black p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] text-white flex flex-col md:flex-row md:items-center justify-between group overflow-hidden relative transition-all duration-500">
+                            <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center z-0"></div>
+                            
+                            <!-- 预览画框 01 -->
+                            <div class="preview-frame hidden md:block">
+                                <img src="AI1.png" alt="Project 01" class="w-full h-full object-cover">
+                            </div>
+
+                            <div class="flex items-center space-x-6 md:space-x-8 relative z-10 group-hover:text-black transition-colors duration-300">
+                                <span class="hollow-num text-5xl md:text-6xl group-hover:hollow-num-dark transition-all duration-300">01</span>
+                                <div class="flex items-center gap-4">
+                                    <svg class="w-6 h-6 opacity-40 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                    <div>
+                                        <h5 class="text-lg md:text-2xl font-black uppercase">Dynamic Visual Website</h5>
+                                        <p class="opacity-40 group-hover:opacity-60 text-[10px] md:text-xs mt-1">Gemini + 零前端基础 = 动态网站</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-mono opacity-20 relative z-10 group-hover:text-black mt-4 md:mt-0">2026.3</span>
+                        </div>
+
+                        <!-- AI Project 02 -->
+                        <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] border border-black/5 shadow-xl flex flex-col md:flex-row md:items-center justify-between group overflow-hidden relative transition-all duration-500">
+                            <div class="absolute inset-0 bg-zinc-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center z-0"></div>
+                            
+                            <!-- 预览画框 02 -->
+                            <div class="preview-frame hidden md:block">
+                                <img src="AI1.png" alt="Project 02" class="w-full h-full object-cover">
+                            </div>
+
+                            <div class="flex items-center space-x-6 md:space-x-8 relative z-10 group-hover:text-white transition-colors duration-300">
+                                <span class="hollow-num hollow-num-dark text-5xl md:text-6xl group-hover:text-white group-hover:opacity-20">02</span>
+                                <div class="flex items-center gap-4">
+                                    <svg class="w-6 h-6 text-black group-hover:text-white opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                    <div>
+                                        <h5 class="text-lg md:text-2xl font-black uppercase text-black group-hover:text-white">Automated Workflow</h5>
+                                        <p class="text-black/40 group-hover:text-white/40 text-[10px] md:text-xs mt-1">自动工作流 —— 每日信息抓取报告</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-mono text-black/20 group-hover:text-white/20 relative z-10 mt-4 md:mt-0">2025.9</span>
+                        </div>
+
+                        <!-- AI Project 03 -->
+                        <div class="bg-black p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] text-white flex flex-col md:flex-row md:items-center justify-between group overflow-hidden relative transition-all duration-500">
+                            <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center z-0"></div>
+                            
+                            <!-- 预览画框 03 -->
+                            <div class="preview-frame hidden md:block">
+                                <img src="AI1.png" alt="Project 03" class="w-full h-full object-cover">
+                            </div>
+
+                            <div class="flex items-center space-x-6 md:space-x-8 relative z-10 group-hover:text-black transition-colors duration-300">
+                                <span class="hollow-num text-5xl md:text-6xl group-hover:hollow-num-dark">03</span>
+                                <div class="flex items-center gap-4">
+                                    <svg class="w-6 h-6 opacity-40 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                                    <div>
+                                        <h5 class="text-lg md:text-2xl font-black uppercase">Personal AI Employee</h5>
+                                        <p class="opacity-40 group-hover:opacity-60 text-[10px] md:text-xs mt-1">提示词工程学习 = 私人AI雇员</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-mono opacity-20 relative z-10 group-hover:text-black mt-4 md:mt-0">2025.12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4 mt-12">
+                    <div class="p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-white border border-black/10 relative overflow-hidden">
+                        <div class="w-8 h-8 bg-black/5 rounded-lg flex items-center justify-center mb-6 md:mb-8">
+                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        </div>
+                        <h4 class="text-3xl md:text-4xl font-black mb-4 uppercase italic text-black">校园创业者</h4>
+                        <p class="text-black/40 text-sm md:text-base leading-relaxed max-w-xl">寻找校园场景下的技术与商业结合点，尝试从0到1的项目落地与执行。</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-4 px-1 md:px-2">
+                        <!-- 创业业务 01 -->
+                        <div class="bg-zinc-50 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-black/5 flex flex-col md:flex-row md:items-center justify-between group hover:bg-black hover:text-white transition-all duration-500">
+                            <div class="flex items-center space-x-6 md:space-x-10">
+                                <span class="hollow-num hollow-num-dark group-hover:text-white text-5xl md:text-6xl opacity-20 transition-colors">01</span>
+                                <div class="flex items-center gap-5">
+                                    <svg class="w-8 h-8 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    <div>
+                                        <h5 class="text-xl md:text-3xl font-black uppercase">校园 IP 建设</h5>
+                                        <p class="text-sm md:text-lg opacity-60 mt-1">抖音 / 小红书：<span class="font-bold underline decoration-accent decoration-2 underline-offset-4">嘉职小w</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 创业业务 02 -->
+                        <div class="bg-zinc-50 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-black/5 flex flex-col md:flex-row md:items-center justify-between group hover:bg-black hover:text-white transition-all duration-500">
+                            <div class="flex items-center space-x-6 md:space-x-10">
+                                <span class="hollow-num hollow-num-dark group-hover:text-white text-5xl md:text-6xl opacity-20 transition-colors">02</span>
+                                <div class="flex items-center gap-5">
+                                    <svg class="w-8 h-8 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01m-.01 4h.01"></path></svg>
+                                    <div>
+                                        <h5 class="text-xl md:text-3xl font-black uppercase">业务范畴</h5>
+                                        <p class="text-sm md:text-lg opacity-60 mt-1">校园卡办理、驾校咨询及更多校园生活服务</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 创业业务 03 -->
+                        <div class="bg-zinc-50 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-black/5 flex flex-col md:flex-row md:items-center justify-between group hover:bg-black hover:text-white transition-all duration-500">
+                            <div class="flex items-center space-x-6 md:space-x-10">
+                                <span class="hollow-num hollow-num-dark group-hover:text-white text-5xl md:text-6xl opacity-20 transition-colors">03</span>
+                                <div class="flex items-center gap-5">
+                                    <svg class="w-8 h-8 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                    <div>
+                                        <h5 class="text-xl md:text-3xl font-black uppercase">合作邀请</h5>
+                                        <p class="text-sm md:text-lg opacity-60 mt-1">志同道合，共创未来。欢迎各类校园项目交流与合作</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-white p-8 md:p-12 rounded-[2rem] md:rounded-[3.5rem] industrial-border flex flex-col md:flex-row items-start md:items-center justify-between hover:shadow-2xl transition-all duration-500 group">
+                    <div class="flex items-center space-x-6 md:space-x-10">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-black rounded-2xl flex items-center justify-center shrink-0 group-hover:rotate-6 transition-transform">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-mono text-black/30 uppercase tracking-[0.3em] mb-2 flex items-center gap-2">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                                Education / 教育背景
+                            </p>
+                            <h3 class="text-2xl md:text-4xl font-black tracking-tight">嘉兴职业技术学院</h3>
+                            <p class="text-sm md:text-lg font-medium opacity-50 mt-1">互联网学院 · 2025-2028</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 md:mt-0 px-8 py-3 bg-zinc-100 border border-black/5 rounded-full text-[11px] font-black uppercase tracking-widest group-hover:bg-black group-hover:text-white transition-colors">
+                        Current / 大一在读
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 border-b border-black/10">
+            <div class="mb-12 md:mb-16">
+                <p class="text-sm font-mono mb-4 text-black/40 tracking-[0.3em] uppercase">/ Section 03</p>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tighter uppercase">保持联系</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="tel:18106608095" class="p-8 md:p-10 bg-black text-white rounded-[2rem] md:rounded-[2.5rem] hover:opacity-90 transition-all flex flex-col justify-between min-h-[220px] md:min-h-[240px] group">
+                    <span class="text-[10px] font-mono opacity-40 uppercase tracking-widest flex items-center gap-2">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        Phone / 联系电话
+                    </span>
+                    <p class="text-2xl md:text-3xl font-bold tracking-tighter mt-4">181 0660 8095</p>
+                    <div class="mt-8 self-end w-10 h-10 border border-white/20 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </a>
+
+                <div onclick="copyText('kkkwangkai@gmail.com', '邮箱已复制')" class="cursor-pointer p-8 md:p-10 bg-white industrial-border rounded-[2rem] md:rounded-[2.5rem] hover:bg-zinc-50 transition-all flex flex-col justify-between min-h-[220px] md:min-h-[240px]">
+                    <span class="text-[10px] font-mono text-black/30 uppercase tracking-widest flex items-center gap-2">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Email / 电子邮箱
+                    </span>
+                    <p class="text-xl md:text-2xl font-bold tracking-tighter mt-4 break-all">kkkwangkai@gmail.com</p>
+                    <div class="mt-8 self-end w-10 h-10 border border-black/10 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                    </div>
+                </div>
+
+                <div onclick="copyText('wkwk_1', '微信号已复制')" class="cursor-pointer p-8 md:p-10 bg-white industrial-border rounded-[2rem] md:rounded-[2.5rem] hover:bg-zinc-50 transition-all flex flex-col justify-between min-h-[220px] md:min-h-[240px]">
+                    <span class="text-[10px] font-mono text-black/30 uppercase tracking-widest flex items-center gap-2">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L5 21V5a2 2 0 012-2h6a2 2 0 012 2v2M7 8H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l4-4h1"></path></svg>
+                        WeChat / 微信号
+                    </span>
+                    <p class="text-3xl md:text-4xl font-black tracking-widest uppercase mt-4">WKWK_1</p>
+                    <div class="mt-8 self-end w-10 h-10 border border-black/10 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="thanks" class="py-20">
+            <div class="flex flex-col items-center text-center">
+                <p class="text-sm font-mono mb-4 text-black/40 tracking-[0.3em] uppercase">/ Section 04</p>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-8 md:mb-12">特别鸣谢</h2>
+                
+                <div class="w-full max-w-2xl py-12 px-8 bg-zinc-50 rounded-[2rem] md:rounded-[3rem] industrial-border border-dashed flex flex-col items-center">
+                    <svg class="w-8 h-8 text-black/10 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                    <p class="text-zinc-400 italic text-[13px] md:text-sm">“内容整理中... 感激一路上给予指导与支持的导师、伙伴与朋友。”</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-16 text-center border-t border-black/5">
+        <p class="text-[9px] md:text-[10px] font-mono text-black/20 uppercase tracking-[0.5em]">© 2025 WANG KAI. All Rights Reserved.</p>
+    </footer>
+
+    <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 px-8 py-3 bg-black text-white text-[10px] font-bold rounded-full opacity-0 pointer-events-none transition-all transform translate-y-8 z-[100] uppercase tracking-widest whitespace-nowrap">
+        已复制到剪贴板
+    </div>
+
+    <script>
+        function copyText(text, message) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                showToast(message);
+            } catch (err) {
+                console.error('复制失败', err);
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.classList.remove('opacity-0', 'translate-y-8', 'pointer-events-none');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-8', 'pointer-events-none');
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }, 2000);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const offset = window.innerWidth < 768 ? 64 : 80;
+                    window.scrollTo({
+                        top: target.offsetTop - offset,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
